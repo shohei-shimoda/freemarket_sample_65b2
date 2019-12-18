@@ -21,9 +21,9 @@
 |introduction|text||
 
 ### Association
-- has_one :addresses
-- has_one :cards
-- has_one :buyers
+- has_one :address
+- has_one :card
+- has_one :buyer
 - has_many :items
 - has_many :comments
 
@@ -44,8 +44,7 @@
 |phone_num|integer|null: false|
 
 ### Association
-- belongs_to :users
-- has_many :items
+- belongs_to :user
 
 ## cardsテーブル
 
@@ -58,7 +57,7 @@
 |security_code|integer|null: false|
 
 ### Association
-- belongs_to :users
+- belongs_to :user
 - has_many :items
 - has_many :buyers
 
@@ -67,8 +66,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
-|item_image|string|null: false|
-|name|text|null: false|
+|name|string|null: false|
 |description|text|null: false|
 |condition|integer|null: false|
 |category|integer|null: false|
@@ -81,10 +79,19 @@
 |status|integer|null: false|
 
 ### Association
-- belongs_to :users
-- belongs_to :items
-- belongs_to :buyers
+- belongs_to :user
+- belongs_to :buyer
 - has_many :comments
+- has_many :images
+
+## imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|item_id|references|null: false, foreign_key: true|
+|image|text|null: false|
+
+### Association
+- belongs_to :item
 
 ## buyersテーブル
 
@@ -95,8 +102,8 @@
 |status|integer|null: false|
 
 ### Association
-- belongs_to :users
-- belongs_to :cards
+- belongs_to :user
+- belongs_to :card
 - has_many :comments
 - has_many :items
 
@@ -106,9 +113,8 @@
 |------|----|-------|
 |content|text|null: false|
 |user_id|references|null: false, foreign_key: true|
-|items_id|references|null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :users
-- has_many :items
-- has_many :buyers
+- belongs_to :user
+- belongs_to :item
