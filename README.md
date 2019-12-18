@@ -58,8 +58,6 @@
 
 ### Association
 - belongs_to :user
-- has_many :items
-- has_many :buyers
 
 ## itemsテーブル
 
@@ -77,6 +75,8 @@
 |delivery_days|integer|null: false|
 |price|integer|null: false|
 |status|integer|null: false|
+|seller_id|integer|null: false|
+|buyer_id|integer|null: false|
 
 ### Association
 - belongs_to :user
@@ -92,20 +92,6 @@
 
 ### Association
 - belongs_to :item
-
-## buyersテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|user_id|references|null: false, foreign_key: true|
-|item_id|references|null: false, foreign_key: true|
-|status|integer|null: false|
-
-### Association
-- belongs_to :user
-- belongs_to :card
-- has_many :comments
-- has_many :items
 
 ## commentsテーブル
 
