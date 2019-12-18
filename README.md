@@ -23,7 +23,6 @@
 ### Association
 - has_one :address
 - has_one :card
-- has_one :buyer
 - has_many :items
 - has_many :comments
 
@@ -63,7 +62,6 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
 |name|string|null: false|
 |description|text|null: false|
 |condition|integer|null: false|
@@ -75,12 +73,11 @@
 |delivery_days|integer|null: false|
 |price|integer|null: false|
 |status|integer|null: false|
-|seller_id|integer|null: false|
-|buyer_id|integer|null: false|
+|seller_id|integer|null: false, foreign_key: true|
+|buyer_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
-- belongs_to :buyer
 - has_many :comments
 - has_many :images
 
