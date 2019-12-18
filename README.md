@@ -71,11 +71,13 @@
 |name|text|null: false|
 |description|text|null: false|
 |condition|integer|null: false|
+|category|integer|null: false|
+|size|integer|null: false|
+|brand|integer||
 |delivery_charge|integer|null: false|
 |delivery_area|integer|null: false|
 |delivery_days|integer|null: false|
 |price|integer|null: false|
-|saller_id|integer|null: false|
 |status|integer|null: false|
 
 ### Association
