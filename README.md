@@ -25,6 +25,7 @@
 - has_one :card
 - has_many :items
 - has_many :comments
+- has_many :likes
 
 ## addressesテーブル
 
@@ -81,6 +82,7 @@
 - belongs_to :buyer, class_name: 'User', foreign_key: 'buyer_id'
 - has_many :comments
 - has_many :images
+- has_many :likes
 
 ## imagesテーブル
 |Column|Type|Options|
@@ -96,6 +98,17 @@
 |Column|Type|Options|
 |------|----|-------|
 |content|text|null: false|
+|user_id|references|null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :item
+
+## likeテーブル
+
+Column|Type|Options|
+|------|----|-------|
 |user_id|references|null: false, foreign_key: true|
 |item_id|references|null: false, foreign_key: true|
 
