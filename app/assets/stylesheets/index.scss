@@ -1,0 +1,32 @@
+.header{
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  position: relative;
+  z-index: 3;
+  font-size: 14px;
+&_all{
+  width: 700px;
+  margin: 0px auto;
+  padding: 8px 0px 0px;
+
+.upper_header{
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  &header_1{
+    
+  }
+}
+.down_header{
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  margin-top: 8px;
+  display: flex;
+  .down_header_a{
+    display: flex;
+  }
+  .down_header_b{
+    display: flex;
+  }
+}
+}
+}
